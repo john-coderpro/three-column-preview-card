@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 minimal-scale=1.0">
+  <title>3-column preview card component</title>
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      --card-1-bg-color: #E28625;
+      --card-2-bg-color: #006971;
+      --card-3-bg-color: #004140;
+      --text-color: #F2F2F2;
+    }
+    *, *::after, *::before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: lightcyan;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .main {
+      width: 90vw;
+      height: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      border-radius: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+    .main > * {
+      flex: 1 1 auto
+    }
+
+    .card {
+      max-width: 400px;
+      width: 90vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      padding: 10px 10px 10px 50px;
+      color: var(--text-color);
+      height: 100vh;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 25px;
+      color: #FFFFFF;
+      width: 80%;
+      mix-blend-mode: normal;
+      opacity: 0.75
+    }
+
+    .card:nth-of-type(1) {
+      background-color: var(--card-1-bg-color);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card:nth-of-type(2) {
+      background-color: var(--card-2-bg-color);
+    }
+
+
+    .card:nth-of-type(3) {
+      background-color: var(--card-3-bg-color);
+      border-radius: 0 0 10px 10px;
+    }
+
+    .title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      text-transform: uppercase;
+    }
+
+    .button {
+      all: unset;
+      width: 146px;
+      height: 48px;
+      background: #F2F2F2;
+      border-radius: 25px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .card:nth-of-type(1) > .button{
+      color: var(--card-1-bg-color);
+    }
+
+     .card:nth-of-type(2) > .button{
+      color: var(--card-2-bg-color);
+    }
+
+     .card:nth-of-type(3) > .button{
+      color: var(--card-3-bg-color);
+    }
+
+    @media (min-width: 50em) {
+      .main {
+        flex-direction: row;
+      }
+      .card:nth-of-type(1) {
+      border-radius: 10px  0 0 10px;
+    }
+
+
+    .card:nth-of-type(3) {
+      border-radius: 0 10px 10px 0;
+    }
+    }
+    h1 {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="main">
+    <h1 >card layout</h1>
+    <section class="card">
+      <img src="./images/icon-sedans.svg" alt=" Sedans vehicle">
+      <h2 class="title">Sedans</h2>
+      <p>
+        Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city
+        or on your next road trip.
+      </p>
+      <button class="button">learn more</button>
+    </section>
+    <section class="card">
+      <img src="./images/icon-suvs.svg" alt=" SUVs vehicle">
+      <h2 class="title">SUVs</h2>
+      <p>
+        Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation
+        and off-road adventures.
+      </p>
+      <button class="button">learn more</button>
+    </section>
+    <section class="card">
+      <img src="./images/icon-luxury.svg" alt=" luxury vehicle">
+      <h2 class="title">Luxury</h2>
+      <p>
+        Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury
+        rental and arrive in style.
+      </p>
+      <button class="button">learn more</button>
+    </section>
+  </main>
+</body>
+</html>
